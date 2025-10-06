@@ -6,7 +6,16 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:00:23 by salargo-          #+#    #+#             */
-/*   Updated: 2025/09/29 16:00:24 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/06 19:12:47 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_isprint(int c)
+{
+	if (c <= 126 && c >= 32)
+		return (1);
+	return (0);
+}
 

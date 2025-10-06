@@ -6,7 +6,15 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:00:19 by salargo-          #+#    #+#             */
-/*   Updated: 2025/09/29 16:00:20 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/06 19:28:46 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
+}

@@ -6,7 +6,15 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:00:09 by salargo-          #+#    #+#             */
-/*   Updated: 2025/09/29 16:00:10 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/06 19:10:05 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
+}

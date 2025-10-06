@@ -6,9 +6,11 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:59:53 by salargo-          #+#    #+#             */
-/*   Updated: 2025/09/29 19:28:30 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/06 18:35:47 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -17,9 +19,9 @@ int	ft_atoi(const char *nptr)
 
 	result = 0;
 	sign = 1;
-	while (*nptr == ' ' || (*nptr <= 9 && *nptr == 13))
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
-	while (*nptr == '+' || *nptr == '-')
+	if (*nptr == '-' || *nptr == '+')
 	{
 		if (*nptr == '-')
 			sign = -1;
@@ -27,17 +29,16 @@ int	ft_atoi(const char *nptr)
 	}
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		result = result * 10 + (*nptr - '0');
+		result = result * 10 + *nptr - '0';
 		nptr++;
 	}
 	return (result * sign);
 }
-
 /* #include <stdio.h>
 #include <stdlib.h>
 int	main ()
 {
-	const char *a = "+-+++--2147483649";
+	const char *a = "-++2147483647";
 	printf ("%d\n", ft_atoi(a));
 	printf ("%d", atoi(a));
 } */
