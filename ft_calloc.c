@@ -6,13 +6,13 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:00:03 by salargo-          #+#    #+#             */
-/*   Updated: 2025/10/06 19:08:17 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/27 19:37:23 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	total;
 	void	*mem;

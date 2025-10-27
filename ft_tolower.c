@@ -6,7 +6,17 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:02:05 by salargo-          #+#    #+#             */
-/*   Updated: 2025/09/29 16:02:06 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/27 19:33:54 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_tolower(int c)
+{
+	if (c <= 'Z' && c >= 'A')
+	{
+		c = c + 32;
+	}
+	return (c);
+}

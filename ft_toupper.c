@@ -6,7 +6,17 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:02:08 by salargo-          #+#    #+#             */
-/*   Updated: 2025/09/29 16:02:09 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/27 19:33:57 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_toupper(int c)
+{
+	if (c <= 'z' && c >= 'a')
+	{
+		c = c - 32;
+	}
+	return (c);
+}

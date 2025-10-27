@@ -6,7 +6,20 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:01:45 by salargo-          #+#    #+#             */
-/*   Updated: 2025/09/29 16:01:46 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/27 19:33:03 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}

@@ -6,7 +6,13 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:01:14 by salargo-          #+#    #+#             */
-/*   Updated: 2025/09/29 16:01:16 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/27 19:30:19 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
+}
