@@ -6,11 +6,33 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:01:24 by salargo-          #+#    #+#             */
-/*   Updated: 2025/10/27 19:30:58 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/27 20:00:49 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* int	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (src[j] != '\0')
+	{
+		j++;
+	}
+	if (size == 0)
+		return (j);
+	while (i < (size - 1) && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (j);
+} */
 
 static void	free_split(char **s, int i)
 {
@@ -24,15 +46,13 @@ static void	free_split(char **s, int i)
 
 static int	count_word(const char *s, char c)
 {
-	int	i;
-	int i_wrd;
-	int flag;
+	int		i;
+	int		i_wrd;
+	int		flag;
 
 	i = 0;
 	flag = 0;
 	i_wrd = 0;
-	if (!s)
-		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c && !flag)
@@ -73,20 +93,20 @@ static char	*count_str(const char **s, char lim)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**words;
-	size_t	i_wrds;
-	int		i;
+	size_t		i;
+	size_t		i_wrds;
+	char		**words;
 
 	if (!s)
 		return (NULL);
-	i_wrds = ft_countsubstr(s, c);
+	i_wrds = count_word(s, c);
 	words = malloc((i_wrds + 1) * sizeof(char *));
 	if (!words)
 		return (NULL);
 	i = 0;
 	while (i < i_wrds)
 	{
-		words[i] = next_substrs(&s, c);
+		words[i] = count_str(&s, c);
 		if (!words[i])
 		{
 			free_split(words, i);
@@ -97,8 +117,8 @@ char	**ft_split(char const *s, char c)
 	words[i] = NULL;
 	return (words);
 }
-/*
-#include <stdio.h>
+
+/* #include <stdio.h>
 
 int main()
 {
@@ -114,5 +134,26 @@ int main()
 			printf("%s\n", result[i]);  // Imprimir cada subcadena
 	}
 	return (0);
-}
-*/
+} */
+/* #include <stdio.h>
+int	main()
+{
+	char c = ' ';
+	char str[]="      split       this for   me  !       ";
+	char **array = ft_split(str, c);
+	int i = 0;
+	while(array[i])
+	{
+		printf("%s\n", array[i]);
+		i++;
+	}
+	i= 0;
+	while(array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+
+	//printf("%d", count_words(str, c));
+} */

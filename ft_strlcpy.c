@@ -6,7 +6,7 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:01:42 by salargo-          #+#    #+#             */
-/*   Updated: 2025/10/27 19:33:06 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/27 20:00:07 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (j);
 }
+
 /*
 int main()
 {
