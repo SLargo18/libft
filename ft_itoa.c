@@ -6,7 +6,7 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:00:25 by salargo-          #+#    #+#             */
-/*   Updated: 2025/10/06 20:41:34 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/28 18:14:14 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,30 +30,40 @@ static int	intl(int n)
 	return (count);
 }
 
-char	*ft_itoa(int n)
+static void	fill_str(char *str, long nb, int size)
 {
-	int				i;
-	char			*a;
-	long			num;
+	int	i;
 
-	i = intl(n);
-	num = n;
-	a = malloc(sizeof(char) * i + 1);
-	if (!a)
-		return (NULL);
-	a[i] = '\0';
-	if (num < 0)
+	if (nb == 0)
+		str[0] = '0';
+	if (nb < 0)
 	{
-		a[0] = '-';
-		num *= -1;
+		str[0] = '-';
+		nb *= -1;
 	}
-	while (num > 0)
+	str[size] = '\0';
+	i = size - 1;
+	while (nb > 0)
 	{
-		a[i - 1] = (num % 10 + '0');
-		num /= 10;
+		str[i] = nb % 10 + '0';
+		nb /= 10;
 		i--;
 	}
-	return (a);
+}
+
+char	*ft_itoa(int n)
+{
+	int		size;
+	char	*str;
+	long	nb;
+
+	nb = n;
+	size = size_num(nb);
+	str = malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	fill_str(str, nb, size);
+	return (str);
 }
 /* #include <stdio.h>
 int main(void)
