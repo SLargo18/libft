@@ -6,7 +6,7 @@
 /*   By: salargo- <salargo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:00:25 by salargo-          #+#    #+#             */
-/*   Updated: 2025/10/28 18:14:14 by salargo-         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:11:06 by salargo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	nb = n;
-	size = size_num(nb);
+	size = intl(nb);
 	str = malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
